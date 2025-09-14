@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { CircleArrowLeft } from 'lucide-react';
 
 function SeatSelection({ selectedSeats, setSelectedSeats, selectedShow, setSelectedShow, currentUser }) {
   const { showId } = useParams();
@@ -130,7 +131,7 @@ function SeatSelection({ selectedSeats, setSelectedSeats, selectedShow, setSelec
           className="back-button"
           onClick={() => navigate(-1)}
         >
-          ← Back to Shows
+          <CircleArrowLeft/>Back to Shows
         </button>
 
       <div className="seat-selection">

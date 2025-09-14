@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { CircleArrowLeft, Star, Clock, Ticket, Play } from 'lucide-react';
 
 function MovieSelection() {
   const { cityName } = useParams();
@@ -51,7 +52,8 @@ function MovieSelection() {
           className="back-button"
           onClick={() => navigate('/')}
         >
-          ← Back to Cities
+          <CircleArrowLeft size={16} />
+          Back to Cities
         </button>
 
         <h2 style={{ 
@@ -155,8 +157,12 @@ function MovieSelection() {
                     padding: '4px 8px',
                     borderRadius: '4px',
                     fontSize: '0.85rem',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
                   }}>
+                    <Star size={12} fill="white" />
                     {movie.rating}/10
                   </span>
                   <span style={{
@@ -181,8 +187,12 @@ function MovieSelection() {
                   <p style={{ 
                     color: '#666', 
                     margin: '5px 0',
-                    fontSize: '0.9rem'
+                    fontSize: '0.9rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px'
                   }}>
+                    <Clock size={14} />
                     <strong>Duration:</strong> {movie.duration} minutes
                   </p>
                 </div>
@@ -206,9 +216,13 @@ function MovieSelection() {
                       minWidth: '150px',
                       background: '#8b5cf6',
                       border: 'none',
-                      borderRadius: '8px'
+                      borderRadius: '8px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px'
                     }}
                   >
+                    <Ticket size={18} />
                     Book Tickets
                   </button>
                 </div>

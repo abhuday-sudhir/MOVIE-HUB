@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { ArrowLeft, Calendar, Clock, MapPin, Ticket, CheckCircle, XCircle } from 'lucide-react';
 
 function BookingHistory({ currentUser }) {
   const [bookings, setBookings] = useState([]);
@@ -67,7 +68,8 @@ function BookingHistory({ currentUser }) {
           className="back-button"
           onClick={() => navigate('/')}
         >
-          ← Back to Home
+          <ArrowLeft size={16} />
+          Back to Home
         </button>
       </div>
     );
@@ -80,7 +82,8 @@ function BookingHistory({ currentUser }) {
           className="back-button"
           onClick={() => navigate('/')}
         >
-          ← Back to Home
+          <ArrowLeft size={16} />
+          Back to Home
         </button>
 
       <h2 style={{ textAlign: 'center', marginBottom: '30px', color: '#333' }}>

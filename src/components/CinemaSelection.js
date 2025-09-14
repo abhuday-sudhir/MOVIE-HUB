@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { CircleArrowLeft, Calendar, Clock, MapPin, Ticket } from 'lucide-react';
 
 function CinemaSelection({ selectedShow, setSelectedShow }) {
   const { cityName, movieId } = useParams();
@@ -116,7 +117,8 @@ function CinemaSelection({ selectedShow, setSelectedShow }) {
           className="back-button"
           onClick={() => navigate(`/city/${cityName}/movies`)}
         >
-          ← Back to Movies
+          <CircleArrowLeft size={16} />
+          Back to Movies
         </button>
 
       {/* Movie Header */}
@@ -161,8 +163,13 @@ function CinemaSelection({ selectedShow, setSelectedShow }) {
         <h3 style={{ 
           margin: '0 0 15px 0', 
           color: '#333',
-          textAlign: 'center'
+          textAlign: 'center',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px'
         }}>
+          <Calendar size={20} />
           Select Date
         </h3>
         

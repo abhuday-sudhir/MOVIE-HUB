@@ -167,18 +167,6 @@ The application automatically creates sample data including:
 - Booking confirmation with details
 - Integration with booking history
 
-## 🚀 Deployment
-
-### Backend Deployment
-1. Install production WSGI server (e.g., Gunicorn)
-2. Set up environment variables for production
-3. Configure database for production use
-4. Set up reverse proxy (e.g., Nginx)
-
-### Frontend Deployment
-1. Build production version: `npm run build`
-2. Serve static files from build directory
-3. Configure API endpoints for production backend
 
 ## 🧪 Testing
 

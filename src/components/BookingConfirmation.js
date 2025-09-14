@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CheckCircle, Calendar, MapPin, Ticket, ArrowLeft, CreditCard } from 'lucide-react';
 
 function BookingConfirmation({ selectedSeats, selectedShow, setSelectedSeats, setSelectedShow }) {
   const navigate = useNavigate();
@@ -51,17 +52,22 @@ function BookingConfirmation({ selectedSeats, selectedShow, setSelectedSeats, se
     <div className="main-content">
       <div className="container">
         <div className="confirmation">
-        <h2>Booking Confirmed!</h2>
+        <h2 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
+          <CheckCircle size={32} color="#27ae60" />
+          Booking Confirmed!
+        </h2>
         <p>Your movie tickets have been successfully booked.</p>
         
         <div className="booking-details">
           <h3 style={{ marginBottom: '15px', color: '#333' }}>Booking Details</h3>
           
-          <div style={{ marginBottom: '10px' }}>
+          <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Ticket size={16} color="#8b5cf6" />
             <strong>Movie:</strong> {bookingDetails.show.movie_title}
           </div>
           
-          <div style={{ marginBottom: '10px' }}>
+          <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Calendar size={16} color="#8b5cf6" />
             <strong>Show Time:</strong> {new Date(bookingDetails.show.show_time).toLocaleString('en-US', {
               weekday: 'long',
               year: 'numeric',
@@ -72,19 +78,22 @@ function BookingConfirmation({ selectedSeats, selectedShow, setSelectedSeats, se
             })}
           </div>
           
-          <div style={{ marginBottom: '10px' }}>
+          <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <MapPin size={16} color="#8b5cf6" />
             <strong>Screen:</strong> {bookingDetails.show.screen_name}
           </div>
           
-          <div style={{ marginBottom: '10px' }}>
+          <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <CheckCircle size={16} color="#8b5cf6" />
             <strong>Seats:</strong> {bookingDetails.seats.join(', ')}
           </div>
           
-          <div style={{ marginBottom: '10px' }}>
+          <div style={{ marginBottom: '12px' }}>
             <strong>Number of Seats:</strong> {bookingDetails.seats.length}
           </div>
           
-          <div style={{ marginBottom: '10px' }}>
+          <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <CreditCard size={16} color="#8b5cf6" />
             <strong>Total Amount:</strong> ₹{bookingDetails.totalAmount}
           </div>
           

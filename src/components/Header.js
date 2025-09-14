@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { LogOut, Home, Calendar } from 'lucide-react';
 
 function Header({ currentUser, onLogout }) {
   const location = useLocation();
@@ -28,12 +29,14 @@ function Header({ currentUser, onLogout }) {
                 to="/" 
                 className={`nav-link ${isActive('/') ? 'active' : ''}`}
               >
+                <Home size={18} />
                 For you
               </Link>
               <Link 
                 to="/bookings" 
                 className={`nav-link ${isActive('/bookings') ? 'active' : ''}`}
               >
+                <Calendar size={18} />
                 My Bookings
               </Link>
             </nav>
@@ -42,6 +45,7 @@ function Header({ currentUser, onLogout }) {
                 onClick={onLogout}
                 className="logout-btn"
               >
+                <LogOut size={16} />
                 Logout
               </button>
             </div>

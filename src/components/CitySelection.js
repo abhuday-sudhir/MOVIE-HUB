@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { MapPin, Building2, ArrowRight } from 'lucide-react';
 
 function CitySelection() {
   const [cities, setCities] = useState([]);
@@ -69,8 +70,22 @@ function CitySelection() {
         {cities.map(city => (
           <div key={city.name} className="cinema-card">
             <div style={{ 
-              marginBottom: '15px'
+              marginBottom: '15px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
             }}>
+              <div style={{
+                background: '#8b5cf6',
+                color: 'white',
+                padding: '8px',
+                borderRadius: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <MapPin size={20} />
+              </div>
               <div>
                 <h3 style={{ margin: 0, color: '#333', fontSize: '1.3rem' }}>
                   {city.name}
@@ -78,8 +93,12 @@ function CitySelection() {
                 <p style={{ 
                   margin: '5px 0 0 0', 
                   color: '#666',
-                  fontSize: '0.9rem'
+                  fontSize: '0.9rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
                 }}>
+                  <Building2 size={14} />
                   {city.cinema_count} cinemas available
                 </p>
               </div>
@@ -120,10 +139,15 @@ function CitySelection() {
                 width: '100%',
                 padding: '12px',
                 fontSize: '1rem',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px'
               }}
             >
               Browse Movies
+              <ArrowRight size={16} />
             </button>
           </div>
         ))}
